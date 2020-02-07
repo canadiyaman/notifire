@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Firebase example use Django Framework">
+    <meta name="keywords" content="Firebase, Django">
+    <title>Notifire</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <script src="{% static "js/firebase.js" %}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Notifications</h2>
+            <div class="dropdown-divider"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="undreaded_box" class="col-md-12"></div>
+        <div class="col-md-12">
+            <div class="input-group mb-3">
+                <input id="id_message" type="text" class="form-control" placeholder="type a message"
+                       aria-label="type a message" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button onclick="sendMessage()" class="btn btn-outline-secondary" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="readed_box" class="col-md-12"></div>
+    </div>
+</div>
+</body>
+</html>
